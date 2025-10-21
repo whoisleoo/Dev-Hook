@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+.floating {
+  animation: floating 4s ease-in-out infinite;
+}
+
+/* versao devagar */
+.floating-1 {
+  animation: floating 4.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* versao mais devagar ainda */
+.floating-2 {
+  animation: floating 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+
+
+/* versao ULTRA MEGA devagar */
+.floating-3 {
+  animation: floating 10s ease-in-out infinite;
+  animation-delay: 1s;
+}

@@ -1,10 +1,10 @@
 function NavBar(){
 
 return(
-<div className="min-h-screen bg-black text-white">
-  <nav className="flex items-center justify-between  py-6 max-w-9xl mx-auto">
+<div className="bg-black text-white">
+  <nav className="flex items-center justify-between py-6 max-w-7xl mx-auto">
     <div className="flex items-center">
-      <img className="w-25 h-25" src="./logo.svg" alt="aqui é uma logo bonita" />
+      <a href="#"><img className="w-25 h-25" src="./logo.svg" alt="aqui é uma logo bonita" /></a>
     </div>
 
     <div className="flex gap-25 text-md">
