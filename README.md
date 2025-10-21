@@ -11,3 +11,6 @@ isso aqui é um trabalho. obrigado pela atenção
 
 colaboradores: leo, gab
 
+### MENSAGEM PARA MEU AMIGO GABRIEL COLABORADOR DO TRABALHO:
+
+favor "npm install" eu adicionei dois novos pacotes.
