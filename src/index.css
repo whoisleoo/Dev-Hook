@@ -88,7 +88,7 @@
   position: relative;
 }
 
-.shimmer-text::before {
+.shimmer-text-2::before {
   content: 'DevHook';
   position: absolute;
   left: 0;

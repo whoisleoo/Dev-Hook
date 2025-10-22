@@ -35,7 +35,7 @@ function SignUp() {
                     <div className="ml-16">
                         <span className="text-purple-500">return</span>{' '}
                         <span className="text-white">join(</span>
-                        <span className=" shimmer-text-2">"DevHook"</span>
+                        <span className=" ">"DevHook"</span>
                          <span className="text-white">)</span>
                         <span className="text-white">;</span>
                     </div>
