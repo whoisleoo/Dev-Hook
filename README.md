@@ -14,3 +14,4 @@ colaboradores: leo, gab
 ### MENSAGEM PARA MEU AMIGO GABRIEL COLABORADOR DO TRABALHO:
 
 favor "npm install" eu adicionei dois novos pacotes.
+favor usar "npm run dev"
