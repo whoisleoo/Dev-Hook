@@ -8,9 +8,8 @@ function Home(){
 
     const sceneRef = useRef(null);
 
-    // FUNÇÃO PRONTA DO PARALLAX-JS
+    
     useEffect(() => {
-        // ve se a cena existe
         if (sceneRef.current) {
             const parallaxInstance = new Parallax(sceneRef.current, {
                 relativeInput: true,
@@ -36,10 +35,10 @@ function Home(){
                 <section className="space-y-6">
                     <h1 className="text-5xl md:text-6xl font-bold leading-tight">
                         Find the <span style={{
-  background: 'linear-gradient(90deg, #9b59b6, #ff6b35)',
-  WebkitBackgroundClip: 'text',
-  backgroundClip: 'text',
-  WebkitTextFillColor: 'transparent'
+                        background: 'linear-gradient(90deg, #9b59b6, #ff6b35)',
+                        WebkitBackgroundClip: 'text',
+                        backgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent'
                         }}>perfect</span><br/>
                         companies for <br/>
                         you.
@@ -55,11 +54,11 @@ function Home(){
             gradientType="linear-gradient"
             gradientOrigin="left-middle"
             colors={[
-               { color: 'rgba(138, 43, 226, 1)', stop: '0%' },    // Vibrant Purple (BlueViolet)
-                                    { color: 'rgba(218, 62, 200, 1)', stop: '30%' },   // Magenta-Purple
-                                    { color: 'rgba(255, 20, 147, 1)', stop: '50%' },   // Deep Pink
-                                    { color: 'rgba(255, 95, 31, 1)', stop: '70%' },    // Orange-Red
-                                    { color: 'rgba(255, 140, 0, 1)', stop: '100%' }    // Dark Orange
+               { color: 'rgba(138, 43, 226, 1)', stop: '0%' }, 
+                                    { color: 'rgba(218, 62, 200, 1)', stop: '30%' },  
+                                    { color: 'rgba(255, 20, 147, 1)', stop: '50%' },  
+                                    { color: 'rgba(255, 95, 31, 1)', stop: '70%' }, 
+                                    { color: 'rgba(255, 140, 0, 1)', stop: '100%' } 
             ]}
             noiseIntensity={0.5}
             noisePatternSize={130}
@@ -89,11 +88,11 @@ function Home(){
                             <GradientBackground
                                 gradientOrigin="top-left"
                                 colors={[
-                                    { color: 'rgba(138, 43, 226, 1)', stop: '0%' },    // Vibrant Purple (BlueViolet)
-                                    { color: 'rgba(218, 62, 200, 1)', stop: '30%' },   // Magenta-Purple
-                                    { color: 'rgba(255, 20, 147, 1)', stop: '50%' },   // Deep Pink
-                                    { color: 'rgba(255, 95, 31, 1)', stop: '70%' },    // Orange-Red
-                                    { color: 'rgba(255, 140, 0, 1)', stop: '100%' }    // Dark Orange
+                                    { color: 'rgba(138, 43, 226, 1)', stop: '0%' },  
+                                    { color: 'rgba(218, 62, 200, 1)', stop: '30%' },  
+                                    { color: 'rgba(255, 20, 147, 1)', stop: '50%' },   
+                                    { color: 'rgba(255, 95, 31, 1)', stop: '70%' },   
+                                    { color: 'rgba(255, 140, 0, 1)', stop: '100%' }  
                                 ]}
                                 noiseIntensity={0.5}
                                 noisePatternSize={130}
