@@ -33,13 +33,9 @@ function Home(){
         <div className="min-h-screen text-white px-7 py-20 relative">
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <section className="space-y-6">
-                    <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-                        Find the <span style={{
-                        background: 'linear-gradient(90deg, #9b59b6, #ff6b35)',
-                        WebkitBackgroundClip: 'text',
-                        backgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent'
-                        }}>perfect</span><br/>
+                    <h1 className="text-5xl md:text-6xl font-bold leading-tight" style={{fontFamily: 'black'}}>
+                        Find the <span className="shimmer-text" style={{
+                        }} >perfect</span><br/>
                         companies for <br/>
                         you.
                     </h1>
@@ -48,8 +44,8 @@ function Home(){
                         // Level up your career by connecting with top tech companies looking for your skills.
                     </p>
 
-                    <button className="px-20 py-4 rounded-2xl text-white font-semibold text-lg hover:opacity-90 transition-opacity mt-8 relative overflow-hidden">
-    <div className="absolute inset-0">
+                    <button className="group px-20 py-4 rounded-2xl text-white font-bold text-lg transition-allduration-300 mt-8 relative overflow-hidden hover:scale-105" >
+    <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-90">
         <GradientBackground
             gradientType="linear-gradient"
             gradientOrigin="left-middle"
@@ -64,6 +60,10 @@ function Home(){
             noisePatternSize={130}
             noisePatternRefreshInterval={2}
         />
+    </div>
+
+    <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700">
+
     </div>
     <span className="relative z-10">Get Started</span>
 </button>
