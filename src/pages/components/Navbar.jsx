@@ -1,4 +1,5 @@
 import { GradientBackground } from "@/components/ui/noisy-gradient-backgrounds";
+import { Link } from 'react-router-dom';
 
 function NavBar(){
 
@@ -16,9 +17,11 @@ return(
     </div>
 
     <div className="flex gap-4">
+      <Link to="/signup">
       <button className="px-9 py-2 border border-white rounded-lg hover:bg-white hover:text-black transition-all">
         Sign Up
       </button>
+      </Link>
         <button className="group px-6 rounded-md text-white text-lg hover:opacity-90 transition-opacity  relative overflow-hidden transition-allduration-300  hover:scale-105">
           <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-90">
               <GradientBackground

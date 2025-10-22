@@ -12,9 +12,12 @@
   "dependencies": {
     "@tailwindcss/vite": "^4.1.15",
     "jquery-parallax.js": "^1.5.0",
+    "lucide-react": "^0.546.0",
     "parallax-js": "^3.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-router-dom": "^7.9.4",
+    "react-syntax-highlighter": "^16.0.0",
     "tailwindcss": "^4.1.15"
   },
   "devDependencies": {
