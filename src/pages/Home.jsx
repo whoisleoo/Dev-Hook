@@ -2,6 +2,7 @@ import NavBar from "./components/Navbar";
 import Parallax from 'parallax-js'
 import { useEffect, useRef } from "react";
 import { GradientBackground } from "@/components/ui/noisy-gradient-backgrounds";
+import { Link } from "react-router-dom";
 
 function Home(){
 
@@ -13,6 +14,7 @@ function Home(){
         if (sceneRef.current) {
             const parallaxInstance = new Parallax(sceneRef.current, {
                 relativeInput: true,
+                  invertX: false,
                 hoverOnly: false,
                 frictionX: 0.05,
                 frictionY: 0.05,
@@ -43,7 +45,7 @@ function Home(){
                     <p className="text-gray-400 text-lg max-w-md mb-25">
                         // Level up your career by connecting with top tech companies looking for your skills.
                     </p>
-
+                        <Link to={'/signup'}>
                     <button className="group px-20 py-4 rounded-2xl text-white font-bold text-lg transition-allduration-300 mt-8 relative overflow-hidden hover:scale-105" >
     <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-90">
         <GradientBackground
@@ -67,6 +69,7 @@ function Home(){
     </div>
     <span className="relative z-10">Get Started</span>
 </button>
+</Link>
                 </section>
 
                 <section className="relative">

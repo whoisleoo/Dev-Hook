@@ -22,7 +22,8 @@ return(
         Sign Up
       </button>
       </Link>
-        <button className="group px-6 rounded-md text-white text-lg hover:opacity-90 transition-opacity  relative overflow-hidden transition-allduration-300  hover:scale-105">
+        <Link to="/login" className="group px-6 rounded-md text-white text-lg hover:opacity-90 transition-opacity  relative overflow-hidden transition-allduration-300  hover:scale-105">
+        <button className="">
           <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-90">
               <GradientBackground
                   gradientType="linear-gradient"
@@ -42,8 +43,9 @@ return(
           <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700">
 
           </div>
-          <span className="relative z-10">Log in</span>
+          <span className="relative top-1.5 z-10">Log in</span>
       </button>
+      </Link>
     </div>
   </nav>
 </div>

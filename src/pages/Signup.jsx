@@ -1,14 +1,18 @@
 import { Link } from 'react-router-dom';
 import { GradientBackground } from "@/components/ui/noisy-gradient-backgrounds";
 
+
 function SignUp() {
+
+
+
     return (
        <>
-        <div className="min-h-screen bg-black text-white grid md:grid-cols-2 relative">
-            <Link to={'/#'} className='hidden md:flex absolute top-4 left-4 z-50'>
-               <img src="./icon.svg" className="w-25 h-25"/>
-            </Link>
-            <section className="hidden md:flex flex-col justify-center items-center px-8 lg:px-12 xl:px-16">
+        <div className="min-h-screen bg-black text-white grid md:grid-cols-2 overflow-hidden">
+            <section className="hidden md:flex flex-col justify-center items-center px-8 sm:hidden lg:px-12 xl:px-16 relative">
+                <Link to={'/#'} className='absolute top-4 left-4 z-50'>
+                    <img src="./icon.svg" className="w-25 h-25"/>
+                </Link>
 
                 <div className="max-w-2xl w-full">
                     <div className="mb-8 lg:mb-12">
@@ -82,16 +86,22 @@ function SignUp() {
                             <span className="text-orange-300">);</span>
                         </div>
                     </div>
+
+
                 </div>
             </section>
 
+          
 
-              <section className="bg-gray-100 flex items-center justify-center lg:rounded-l-4xl px-6 md:px-8 lg:px-12 xl:pl-16">
-                <div className="w-full max-w-lg">
+              <section className="bg-gray-100 flex items-center justify-center lg:rounded-l-4xl px-6 md:px-8 lg:px-12 xl:pl-16 pt-20 md:pt-24">
+                <div className="w-full max-w-lg md:mt-8">
+                    <Link to={'/#'} className='flex md:hidden mb-8 justify-center'>
+                        <img src="./icon-dark.svg" className="w-20 h-20"/>
+                    </Link>
                     <h1 className="text-3xl font-bold text-black mb-8 text-left" style={{fontFamily: 'black'}}>
                         Create Account
                     </h1>
-                    <div className="mb-6 flex gap-3">
+                    <div className="mb-20 flex gap-3">
                         <button className="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 flex items-center justify-center gap-3 hover:bg-gray-50 transition">
                                 <img src='./google.svg' className='w-5 h-5'></img>
                             <span className="text-gray-700 font-medium text-sm">Sign in with Google</span>
@@ -156,7 +166,9 @@ function SignUp() {
 
                     <p className="text-center text-gray-500 text-sm mt-6">
                         Allready have an account?{' '}
-                        <a href="#" className="text-purple-600 hover:underline font-medium">Log In</a>
+                        <Link to={'/login'}>
+                        <span  className="text-purple-600 hover:underline font-medium">Log In</span>
+                        </Link>
                     </p>
                 </div>
             </section>
