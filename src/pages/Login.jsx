@@ -31,7 +31,7 @@ function Login() {
     return (
        <>
         <div className="min-h-screen bg-black text-white grid md:grid-cols-2">
-             <section className="bg-gray-100 flex items-center justify-center lg:rounded-l-4xl px-6 md:px-8 lg:px-12 xl:pl-16 pt-20 md:pt-24 relative order-2 md:order-1">
+             <section className="bg-gray-100 flex items-center justify-center lg:rounded-r-2xl px-6 md:px-8 lg:px-12 xl:pl-16 pt-20 md:pt-24 relative order-2 md:order-1">
                 <Link to={'/#'} className='hidden md:flex absolute top-4 left-4 z-50'>
                     <img src="./icon-dark.svg" className="w-25 h-25"/>
                 </Link>
