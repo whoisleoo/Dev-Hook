@@ -101,31 +101,31 @@ function Home(){
                         </div>
                         <div id="scene" ref={sceneRef} className="w-full h-full">
                             <div data-depth="0.1">
-                            <img src="./green_dude.svg" className="w-full h-full object-contain floating-3" style={{position: 'relative', top: '150px'}}/>
+                            <img src="./green_dude.svg" className="w-full h-full object-contain floating-3" style={{position: 'relative', top: '150px'}} alt="boneco verde"/>
                             </div>
 
                              <div data-depth="0.1">
-                            <img src="./java.png" className="w-full h-full object-contain floating" style={{position: 'relative', top: '180px'}}/>
+                            <img src="./java.png" className="w-full h-full object-contain floating" style={{position: 'relative', top: '180px'}} alt="logo java"/>
                             </div>
 
                             <div>
-                            <img src="./balcony.svg" className="w-full h-full object-contain" style={{position: 'relative', top: '150px'}}/>
+                            <img src="./balcony.svg" className="w-full h-full object-contain" style={{position: 'relative', top: '150px'}} alt="balcão"/>
                             </div>
 
                               <div data-depth="0.1">
-                            <img src="./python.png" className="w-full h-full object-contain floating-1" style={{position: 'relative', top: '100px', left: '30px'}}/>
+                            <img src="./python.png" className="w-full h-full object-contain floating-1" style={{position: 'relative', top: '100px', left: '30px'}} alt="logo python" />
                             </div>
 
                             <div data-depth="0.25">
-                            <img src="./yellow_dude.svg" className="w-full h-full object-contain" style={{position: 'relative', top: '150px'}}/>
+                            <img src="./yellow_dude.svg" className="w-full h-full object-contain" style={{position: 'relative', top: '150px'}} alt="caboco amarelo" />
                             </div>
 
                               <div data-depth="0.1">
-                            <img src="./javascript.png" className="w-full h-full object-contain floating-2" style={{position: 'relative', top: '150px', right: '30px'}}/>
+                            <img src="./javascript.png" className="w-full h-full object-contain floating-2" alt="logo javscript" style={{position: 'relative', top: '150px', right: '30px'} }/>
                             </div>
                             
                             <div data-depth="0.50">
-                            <img src="./double_dudes.svg" className="w-full h-full object-contain" style={{position: 'relative', top: '150px'}}/>
+                            <img src="./double_dudes.svg" className="w-full h-full object-contain" style={{position: 'relative', top: '150px'}} alt="dois caboco" />
                             </div>
                         </div>
                     </div>

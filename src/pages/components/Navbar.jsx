@@ -6,7 +6,7 @@ function NavBar(){
 return(
 <div className="bg-black text-white">
   <nav className="flex items-center justify-between py-6 max-w-7xl mx-auto">
-    <div className="flex items-center">
+    <div className="flex items-center relative right-8">
       <a href="#"><img className="w-25 h-25" src="./logo.svg" alt="aqui é uma logo bonita" /></a>
     </div>
 
