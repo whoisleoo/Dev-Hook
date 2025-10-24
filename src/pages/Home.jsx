@@ -141,6 +141,7 @@ function Home(){
             <div className="w-full pt-100 pb-100"   style={{fontFamily: 'medium'}}>
                             <ScrollVelocity
   texts={['WHO WE ARE', 'About Us']} 
+  velocity={30}
   className="custom-scroll-text"
 
 />
