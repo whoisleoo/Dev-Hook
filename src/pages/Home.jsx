@@ -3,6 +3,7 @@ import Parallax from 'parallax-js'
 import { useEffect, useRef } from "react";
 import { GradientBackground } from "@/components/ui/noisy-gradient-backgrounds";
 import { Link } from "react-router-dom";
+import ScrollVelocity from "../components/ui/ScrollVelocity";
 
 function Home(){
 
@@ -132,8 +133,18 @@ function Home(){
                             </div>
                         </div>
                     </div>
+
+                    
                 </section>
+
             </div>
+            <div className="w-full pt-100 pb-100"   style={{fontFamily: 'medium'}}>
+                            <ScrollVelocity
+  texts={['WHO WE ARE', 'About Us']} 
+  className="custom-scroll-text"
+
+/>
+</div>
         </div> 
         </>
     )

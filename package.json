@@ -13,6 +13,7 @@
     "@tailwindcss/vite": "^4.1.15",
     "jquery-parallax.js": "^1.5.0",
     "lucide-react": "^0.546.0",
+    "motion": "^12.23.24",
     "parallax-js": "^3.1.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
