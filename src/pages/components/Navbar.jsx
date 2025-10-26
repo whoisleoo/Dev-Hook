@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 function NavBar(){
 
 return(
@@ -6,11 +7,30 @@ return(
     <div className="flex items-center">
       <img className="w-25 h-25" src="./logo.svg" alt="aqui é uma logo bonita" />
     </div>
+=======
+import { GradientBackground } from "@/components/ui/noisy-gradient-backgrounds";
+import { Link } from 'react-router-dom';
+
+function NavBar({ className = "bg-black"}){
+
+return(
+
+<div className={'${className} text-white'}>
+ 
+  <nav className="flex items-center justify-between py-6 max-w-7xl mx-auto">
+    
+    <div className="flex items-center relative right-8">
+    <Link to={'/#'}>
+  <img src="./icon.svg" className="w-25 h-25"/>
+  </Link>
+      </div> 
+>>>>>>> Stashed changes
 
     <div className="flex gap-25 text-md">
-      <a href="#" className="hover:text-purple-400 transition-colors">Home</a>
+    <Link to="/#" className="hover:text-purple-400 transition-colors">Home</Link>
       <a href="#" className="hover:text-purple-400 transition-colors">How it Works</a>
       <a href="#" className="hover:text-purple-400 transition-colors">Support</a>
+      <Link to="/AboutUs#" className="hover:text-purple-400 transition-colors">About-us</Link>
     </div>
 
     <div className="flex gap-4">
