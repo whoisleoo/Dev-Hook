@@ -90,12 +90,6 @@ const ScrollStack = ({
     const stackPositionPx = parsePercentage(stackPosition, containerHeight);
     const scaleEndPositionPx = parsePercentage(scaleEndPosition, containerHeight);
 
-    // Debug log (apenas a cada 100px de scroll para não poluir o console)
-    if (Math.floor(scrollTop / 100) !== Math.floor((window.__lastScrollTop || 0) / 100)) {
-      console.log('📜 Scroll:', Math.round(scrollTop), 'Stack pos:', Math.round(stackPositionPx));
-      window.__lastScrollTop = scrollTop;
-    }
-
     const endElement = useWindowScroll
       ? document.querySelector('.scroll-stack-end')
       : scrollerRef.current?.querySelector('.scroll-stack-end');
@@ -116,19 +110,6 @@ const ScrollStack = ({
       const triggerEnd = cardTop - scaleEndPositionPx;
       const pinStart = cardTop - stackPositionPx - itemStackDistance * i;
       const pinEnd = endElementTop - containerHeight / 2;
-
-      // Debug detalhado do primeiro card
-      if (i === 0 && scrollTop > 100 && scrollTop < 500) {
-        console.log(`🔍 Card 0 calculation (using cached):`, {
-          cardTop,
-          triggerStart,
-          pinStart,
-          pinEnd,
-          scrollTop,
-          'scrollTop >= pinStart': scrollTop >= pinStart,
-          'scrollTop <= pinEnd': scrollTop <= pinEnd
-        });
-      }
 
       const scaleProgress = calculateProgress(scrollTop, triggerStart, triggerEnd);
       const targetScale = baseScale + i * itemScale;
@@ -182,19 +163,6 @@ const ScrollStack = ({
 
         card.style.transform = transform;
         card.style.filter = filter;
-
-        // Log apenas o primeiro card para debug
-        if (i === 0 && Math.abs(newTransform.translateY) > 0) {
-          console.log(`🎯 Card 0 transform:`, {
-            translateY: newTransform.translateY,
-            scale: newTransform.scale,
-            isPinned,
-            scrollTop,
-            cardTop,
-            pinStart,
-            pinEnd
-          });
-        }
 
         lastTransformsRef.current.set(i, newTransform);
       }
@@ -290,19 +258,13 @@ const ScrollStack = ({
 
   useLayoutEffect(() => {
     const scroller = scrollerRef.current;
-    if (!scroller) {
-      console.log('❌ ScrollStack: scroller ref is null');
-      return;
-    }
+    if (!scroller) return;
 
     const cards = Array.from(
       useWindowScroll
         ? document.querySelectorAll('.scroll-stack-card')
         : scroller.querySelectorAll('.scroll-stack-card')
     );
-
-    console.log('✅ ScrollStack: Found', cards.length, 'cards');
-    console.log('📋 ScrollStack config:', { useWindowScroll, itemDistance, itemStackDistance, stackPosition });
 
     cardsRef.current = cards;
     const transformsCache = lastTransformsRef.current;
@@ -312,7 +274,6 @@ const ScrollStack = ({
     cards.forEach((card, i) => {
       const originalTop = getElementOffset(card);
       cardOriginalPositionsRef.current.set(i, originalTop);
-      console.log(`Card ${i} original position:`, originalTop);
     });
 
     cards.forEach((card, i) => {
@@ -327,10 +288,6 @@ const ScrollStack = ({
       card.style.webkitTransform = 'translateZ(0)';
       card.style.perspective = '1000px';
       card.style.webkitPerspective = '1000px';
-      console.log(`Card ${i} initialized:`, {
-        marginBottom: card.style.marginBottom,
-        position: card.style.position
-      });
     });
 
     setupLenis();
