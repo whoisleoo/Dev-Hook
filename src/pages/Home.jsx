@@ -1,11 +1,38 @@
 import NavBar from "./components/Navbar";
+import Parallax from 'parallax-js'
+import { useEffect, useRef } from "react";
+import { GradientBackground } from "@/components/ui/noisy-gradient-backgrounds";
+import { Link } from "react-router-dom";
+import ScrollVelocity from "../components/ui/ScrollVelocity";
 
 function Home(){
+
+
+    const sceneRef = useRef(null);
+
+    
+    useEffect(() => {
+        if (sceneRef.current) {
+            const parallaxInstance = new Parallax(sceneRef.current, {
+                relativeInput: true,
+                  invertX: false,
+                hoverOnly: false,
+                frictionX: 0.05,
+                frictionY: 0.05,
+                scalarX: 3,
+                scalarY: 1.5
+            });
+
+            return () => {
+                parallaxInstance.destroy();
+            };
+        }
+    }, []);
+
+
     return(
         <>
         <NavBar/>
-<<<<<<< Updated upstream
-=======
         <div className="min-h-screen text-white px-7 py-20 relative">
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <section className="space-y-6">
@@ -113,12 +140,13 @@ function Home(){
             </div>
             <div className="w-full pt-100 pb-100"   style={{fontFamily: 'medium'}}>
                             <ScrollVelocity
-  texts={['WHO WE ARE', 'About Us']} 
+  texts={['WHO WE ARE', 'About Us']}
+  velocity={30}
   className="custom-scroll-text"
+
 />
 </div>
-        </div> 
->>>>>>> Stashed changes
+        </div>
         </>
     )
 }

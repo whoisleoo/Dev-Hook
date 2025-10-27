@@ -1,1 +1,202 @@
 @import "tailwindcss";
+
+@keyframes floating {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+
+
+
+.floating {
+  animation: floating 4s ease-in-out infinite;
+}
+
+/* versao devagar */
+.floating-1 {
+  animation: floating 4.5s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* versao mais devagar ainda */
+.floating-2 {
+  animation: floating 5s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+
+
+/* versao ULTRA MEGA devagar */
+.floating-3 {
+  animation: floating 10s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+::selection {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #9b59b6, #e91e8c, #ff6b35);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'black';
+  position: relative;
+}
+
+.shimmer-text::before {
+  content: 'perfect';
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 10s linear infinite;
+  z-index: 1;
+}
+
+
+.shimmer-text-2 {
+  background: linear-gradient(90deg, #9b59b6, #e91e8c, #ff6b35);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'black';
+  position: relative;
+  display: inline-block;
+}
+
+.shimmer-text-2::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.9) 50%,
+    rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 10s linear infinite;
+  z-index: 1;
+}
+
+
+
+::-webkit-scrollbar {
+  display: none;
+  background-color: #000;
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+  background: #000;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  display: none;
+  background: #2f2f2f;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  display: none;
+  background: #2f2f2f;
+}
+
+
+@font-face {
+        font-family: 'medium';
+        src: url('/Medium.otf') format('opentype')
+    }
+
+
+
+    @font-face {
+        font-family: 'black';
+        src: url('/Montserrat-Black.ttf') format('opentype')
+    }
+
+
+
+    
+    @font-face {
+        font-family: 'nerd';
+        src: url('/HackNerd.ttf') format('opentype')
+    }
+
+
+@keyframes wave-motion {
+  0% {
+    transform: translateY(0px);
+  }
+  25% {
+    transform: translateY(-20px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  75% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.wave-animate-1 {
+  animation: wave-motion 6s ease-in-out infinite;
+}
+
+.wave-animate-2 {
+  animation: wave-motion 7s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+.wave-animate-3 {
+  animation: wave-motion 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+
+.wave-animate-4 {
+  animation: wave-motion 9s ease-in-out infinite;
+  animation-delay: 1.5s;
+}

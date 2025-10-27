@@ -1,19 +1,14 @@
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home.jsx'
-<<<<<<< Updated upstream
-=======
 import SignUp from './pages/Signup.jsx'
 import Login from './pages/Login.jsx'
 import AboutUs from './pages/AboutUs.jsx'
->>>>>>> Stashed changes
 
 function App() {
-  
+
   return (
     <>
-<<<<<<< Updated upstream
-    <Home/>
-=======
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,7 +17,6 @@ function App() {
         <Route path="/AboutUs" element={<AboutUs />} />
       </Routes>
     </BrowserRouter>
->>>>>>> Stashed changes
     </>
   )
 }
