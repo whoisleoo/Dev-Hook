@@ -35,6 +35,8 @@ const ScrollStack = ({
   const cardsRef = useRef([]);
   const lastTransformsRef = useRef(new Map());
   const isUpdatingRef = useRef(false);
+  const rafIdRef = useRef(null);
+  const lastScrollTopRef = useRef(0);
 
   const calculateProgress = useCallback((scrollTop, start, end) => {
     if (scrollTop < start) return 0;
@@ -79,11 +81,18 @@ const ScrollStack = ({
   );
 
   const updateCardTransforms = useCallback(() => {
-    if (!cardsRef.current.length || isUpdatingRef.current) return;
-
-    isUpdatingRef.current = true;
+    if (!cardsRef.current.length) return;
+    if (isUpdatingRef.current) return;
 
     const { scrollTop, containerHeight, scrollContainer } = getScrollData();
+
+    // Skip update if scroll position hasn't changed significantly
+    if (Math.abs(scrollTop - lastScrollTopRef.current) < 1) {
+      return;
+    }
+
+    lastScrollTopRef.current = scrollTop;
+    isUpdatingRef.current = true;
     const stackPositionPx = parsePercentage(stackPosition, containerHeight);
     const scaleEndPositionPx = parsePercentage(scaleEndPosition, containerHeight);
 
@@ -143,10 +152,10 @@ const ScrollStack = ({
       const lastTransform = lastTransformsRef.current.get(i);
       const hasChanged =
         !lastTransform ||
-        Math.abs(lastTransform.translateY - newTransform.translateY) > 0.1 ||
-        Math.abs(lastTransform.scale - newTransform.scale) > 0.001 ||
-        Math.abs(lastTransform.rotation - newTransform.rotation) > 0.1 ||
-        Math.abs(lastTransform.blur - newTransform.blur) > 0.1;
+        Math.abs(lastTransform.translateY - newTransform.translateY) > 0.5 ||
+        Math.abs(lastTransform.scale - newTransform.scale) > 0.005 ||
+        Math.abs(lastTransform.rotation - newTransform.rotation) > 0.5 ||
+        Math.abs(lastTransform.blur - newTransform.blur) > 0.5;
 
       if (hasChanged) {
         const transform = `translate3d(0, ${newTransform.translateY}px, 0) scale(${newTransform.scale}) rotate(${newTransform.rotation}deg)`;
@@ -187,7 +196,12 @@ const ScrollStack = ({
   ]);
 
   const handleScroll = useCallback(() => {
-    updateCardTransforms();
+    if (rafIdRef.current) return;
+
+    rafIdRef.current = requestAnimationFrame(() => {
+      updateCardTransforms();
+      rafIdRef.current = null;
+    });
   }, [updateCardTransforms]);
 
   const setupLenis = useCallback(() => {
@@ -199,12 +213,17 @@ const ScrollStack = ({
         touchMultiplier: 2,
         infinite: false,
         wheelMultiplier: 1,
-        lerp: 0.1,
+        lerp: 0.15,
         syncTouch: true,
-        syncTouchLerp: 0.075
+        syncTouchLerp: 0.1
       });
 
-      lenis.on('scroll', handleScroll);
+      lenis.on('scroll', ({ velocity }) => {
+        // Only update if there's actual movement
+        if (Math.abs(velocity) > 0.01 || !lenisRef.current) {
+          handleScroll();
+        }
+      });
 
       const raf = time => {
         lenis.raf(time);
@@ -227,12 +246,17 @@ const ScrollStack = ({
         touchMultiplier: 2,
         infinite: false,
         wheelMultiplier: 1,
-        lerp: 0.1,
+        lerp: 0.15,
         syncTouch: true,
-        syncTouchLerp: 0.075
+        syncTouchLerp: 0.1
       });
 
-      lenis.on('scroll', handleScroll);
+      lenis.on('scroll', ({ velocity }) => {
+        // Only update if there's actual movement
+        if (Math.abs(velocity) > 0.01 || !lenisRef.current) {
+          handleScroll();
+        }
+      });
 
       const raf = time => {
         lenis.raf(time);
@@ -279,6 +303,9 @@ const ScrollStack = ({
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
+      if (rafIdRef.current) {
+        cancelAnimationFrame(rafIdRef.current);
+      }
       if (lenisRef.current) {
         lenisRef.current.destroy();
       }
@@ -286,6 +313,8 @@ const ScrollStack = ({
       cardsRef.current = [];
       transformsCache.clear();
       isUpdatingRef.current = false;
+      rafIdRef.current = null;
+      lastScrollTopRef.current = 0;
     };
   }, [
     itemDistance,

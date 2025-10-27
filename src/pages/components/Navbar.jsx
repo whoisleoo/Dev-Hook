@@ -19,7 +19,7 @@ return(
     <Link to="/#" className="hover:text-purple-400 transition-colors">Home</Link>
       <a href="#" className="hover:text-purple-400 transition-colors">How it Works</a>
       <a href="#" className="hover:text-purple-400 transition-colors">Support</a>
-      <Link to="/AboutUs#" className="hover:text-purple-400 transition-colors">About-us</Link>
+      <Link to="/AboutUs#" className="hover:text-purple-400 transition-colors">About us</Link>
     </div>
 
     <div className="flex gap-4">
