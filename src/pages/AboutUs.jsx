@@ -59,7 +59,7 @@ function AboutUs() {
         <NavBar className="bg-transparent" />
 
         <div className="container mx-auto text-center pt-12 md:pt-20 px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl" style={{fontFamily: 'black'}}>About <span className="shimmer-text-2" data-text="DevHook" style={{}}>DevHook</span></h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl" style={{fontFamily: 'black'}}>About <span className="shimmer-text-2" data-text="DevHook" style={{}}>DevHook</span></h1>
         </div>
 
         <div className="px-4 max-w-4xl mx-auto">

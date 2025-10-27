@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { GradientBackground } from "@/components/ui/noisy-gradient-backgrounds";
 import { Link } from "react-router-dom";
 import ScrollVelocity from "../components/ui/ScrollVelocity";
+import About from "./About";
 
 function Home(){
 
@@ -138,7 +139,7 @@ function Home(){
                 </section>
 
             </div>
-            <div className="w-full pt-100 pb-100"   style={{fontFamily: 'medium'}}>
+            <div className="w-full pt-100 pb-50"   style={{fontFamily: 'medium'}}>
                             <ScrollVelocity
   texts={['WHO WE ARE', 'About Us']}
   velocity={30}
@@ -147,6 +148,7 @@ function Home(){
 />
 </div>
         </div>
+        <About />
         </>
     )
 }

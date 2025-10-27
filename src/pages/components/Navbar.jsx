@@ -22,7 +22,7 @@ return(
 
     <div className="flex items-center">
       <Link to={'/#'}>
-        <img src="./icon.svg" className="w-20 h-20 sm:w-25 sm:h-25"/>
+        <img src="./icon.svg" className="w-20 h-20 sm:w-25 sm:h-25 relative lg:right-15"/>
       </Link>
     </div>
 
