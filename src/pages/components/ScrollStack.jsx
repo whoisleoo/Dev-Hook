@@ -193,33 +193,46 @@ const ScrollStack = ({
   ]);
 
   const handleScroll = useCallback(() => {
-    updateCardTransforms();
+    if (!animationFrameRef.current) {
+      animationFrameRef.current = requestAnimationFrame(() => {
+        updateCardTransforms();
+        animationFrameRef.current = null;
+      });
+    }
   }, [updateCardTransforms]);
 
   const setupLenis = useCallback(() => {
     if (useWindowScroll) {
-      const lenis = new Lenis({
-        duration: 1,
-        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        smoothWheel: true,
-        touchMultiplier: 2,
-        infinite: false,
-        wheelMultiplier: 1,
-        lerp: 0.15,
-        syncTouch: true,
-        syncTouchLerp: 0.1
-      });
+      // Adiciona listener de scroll nativo como fallback
+      window.addEventListener('scroll', handleScroll, { passive: true });
 
-      lenis.on('scroll', handleScroll);
+      try {
+        const lenis = new Lenis({
+          duration: 1,
+          easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+          smoothWheel: true,
+          touchMultiplier: 2,
+          infinite: false,
+          wheelMultiplier: 1,
+          lerp: 0.15,
+          syncTouch: true,
+          syncTouchLerp: 0.1
+        });
 
-      const raf = time => {
-        lenis.raf(time);
-        animationFrameRef.current = requestAnimationFrame(raf);
-      };
-      animationFrameRef.current = requestAnimationFrame(raf);
+        lenis.on('scroll', handleScroll);
 
-      lenisRef.current = lenis;
-      return lenis;
+        const raf = time => {
+          lenis.raf(time);
+          requestAnimationFrame(raf);
+        };
+        requestAnimationFrame(raf);
+
+        lenisRef.current = lenis;
+        return lenis;
+      } catch (error) {
+        console.error('Lenis initialization failed, using native scroll:', error);
+        return null;
+      }
     } else {
       const scroller = scrollerRef.current;
       if (!scroller) return;
@@ -290,8 +303,8 @@ const ScrollStack = ({
     updateCardTransforms();
 
     return () => {
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
+      if (useWindowScroll) {
+        window.removeEventListener('scroll', handleScroll);
       }
       if (lenisRef.current) {
         lenisRef.current.destroy();
@@ -301,6 +314,7 @@ const ScrollStack = ({
       cardOriginalPositionsRef.current.clear();
       transformsCache.clear();
       isUpdatingRef.current = false;
+      animationFrameRef.current = null;
     };
   }, [
     itemDistance,
