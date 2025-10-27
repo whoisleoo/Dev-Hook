@@ -264,17 +264,7 @@ const ScrollStack = ({
     cardsRef.current = cards;
     const transformsCache = lastTransformsRef.current;
 
-    // Cachear posições originais dos cards ANTES de aplicar transforms
-    cardOriginalPositionsRef.current.clear();
-
-    // Força um reflow para garantir que as posições estejam corretas
-    scroller.offsetHeight;
-
-    cards.forEach((card, i) => {
-      const originalTop = getElementOffset(card);
-      cardOriginalPositionsRef.current.set(i, originalTop);
-    });
-
+    // Primeiro aplica estilos aos cards
     cards.forEach((card, i) => {
       if (i < cards.length - 1) {
         card.style.marginBottom = `${itemDistance}px`;
@@ -287,6 +277,16 @@ const ScrollStack = ({
       card.style.webkitTransform = 'translateZ(0)';
       card.style.perspective = '1000px';
       card.style.webkitPerspective = '1000px';
+    });
+
+    // Força um reflow para que os estilos sejam aplicados
+    scroller.offsetHeight;
+
+    // DEPOIS cacheia as posições originais com margins já aplicados
+    cardOriginalPositionsRef.current.clear();
+    cards.forEach((card, i) => {
+      const originalTop = getElementOffset(card);
+      cardOriginalPositionsRef.current.set(i, originalTop);
     });
 
     setupLenis();
@@ -347,10 +347,10 @@ const ScrollStack = ({
 
   return (
     <div className={containerClassName} ref={scrollerRef} style={containerStyles}>
-      <div className="scroll-stack-inner pt-[20vh] px-20 pb-[100vh] min-h-screen">
+      <div className="scroll-stack-inner pt-[20vh] px-20 pb-[20vh] min-h-screen">
         {children}
         {/* Spacer so the last pin can release cleanly */}
-        <div className="scroll-stack-end w-full h-[200vh]" />
+        <div className="scroll-stack-end w-full h-[50vh]" />
       </div>
     </div>
   );
