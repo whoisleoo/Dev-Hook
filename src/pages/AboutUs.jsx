@@ -62,12 +62,14 @@ function AboutUs() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl" style={{fontFamily: 'black'}}>About <span className="shimmer-text-2" data-text="DevHook" style={{}}>DevHook</span></h1>
         </div>
 
-        <div className="px-4">
-          <p className="text-center pt-5 text-sm sm:text-base md:text-2xl">O DevHook é uma plataforma criada e pensada para conectar desenvolvedores a empresas de forma simples e prática</p>
-          <p className="text-center text-sm sm:text-base md:text-2xl"> burlando burocracias e focando no principal. Conheça mais da nossa história a baixo!</p>
+        <div className="px-4 max-w-4xl mx-auto">
+          <p className="text-center pt-8 text-lg sm:text-xl md:text-2xl lg:text-3xl font-light leading-tight">
+            <span className="font-semibold">Conectamos desenvolvedores a empresas</span> <br></br> de forma simples e direta!
+          </p>
+         
+
         </div>
 
-        {/*Time line*/}
         <div className='text-center'>
 
         <ScrollStack
@@ -263,7 +265,7 @@ function AboutUs() {
                               />
                           </div>
   </div>
-  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-4" style={{fontFamily: 'medium'}}>No Breve...</h2>
+  <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-4" style={{fontFamily: 'medium'}}>Em resumo...</h2>
   <p className="text-sm sm:text-base md:text-2xl font-bold">Ainda teremos muita história para contar, muito chão para andar, e muitas linhas de código para escrever, até agora, somos gratos pelo que já foi construido!</p>
 </ScrollStackItem>
 
