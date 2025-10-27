@@ -101,10 +101,7 @@ const ScrollStack = ({
 
       // Usa a posição original cacheada
       const cardTop = cardOriginalPositionsRef.current.get(i);
-      if (!cardTop) {
-        console.warn(`⚠️ Card ${i} position not cached!`);
-        return;
-      }
+      if (!cardTop) return;
 
       const triggerStart = cardTop - stackPositionPx - itemStackDistance * i;
       const triggerEnd = cardTop - scaleEndPositionPx;
@@ -201,21 +198,19 @@ const ScrollStack = ({
 
   const setupLenis = useCallback(() => {
     if (useWindowScroll) {
-      console.log('🚀 ScrollStack: Initializing Lenis in window scroll mode');
       const lenis = new Lenis({
-        duration: 1.2,
+        duration: 1,
         easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         smoothWheel: true,
         touchMultiplier: 2,
         infinite: false,
         wheelMultiplier: 1,
-        lerp: 0.1,
+        lerp: 0.15,
         syncTouch: true,
-        syncTouchLerp: 0.075
+        syncTouchLerp: 0.1
       });
 
       lenis.on('scroll', handleScroll);
-      console.log('✅ Lenis initialized and scroll handler attached');
 
       const raf = time => {
         lenis.raf(time);

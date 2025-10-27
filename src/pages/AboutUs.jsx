@@ -72,8 +72,8 @@ function AboutUs() {
 
         <ScrollStack
           useWindowScroll={true}
-          itemDistance={100}
-          itemStackDistance={20}
+          itemDistance={150}
+          itemStackDistance={25}
           stackPosition="20%"
           scaleEndPosition="10%"
         >
