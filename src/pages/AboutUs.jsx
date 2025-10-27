@@ -48,13 +48,13 @@ const items = [
 function AboutUs() {
   return (
     // Camada 0
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div className="relative min-h-screen bg-black text-white">
 
       {/*Camada 1*/}
-    
+
 
       {/*Camada 2*/}
-      <div className='relative z-20'>
+      <div className='relative'>
 
         <NavBar className="bg-transparent" />
 
@@ -68,9 +68,15 @@ function AboutUs() {
         </div>
 
         {/*Time line*/}
-        <div className='text-center px-4'>
+        <div className='text-center'>
 
-        <ScrollStack>
+        <ScrollStack
+          useWindowScroll={true}
+          itemDistance={100}
+          itemStackDistance={20}
+          stackPosition="20%"
+          scaleEndPosition="10%"
+        >
 
 <ScrollStackItem
   itemClassName="text-center bg-black border-2 border-white flex flex-col"
@@ -266,7 +272,7 @@ function AboutUs() {
         </div>
 
         <div className="container mx-auto pt-5 pb-10 text-center px-4">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl" style={{fontFamily: "medium"}}>Converse Conosco!</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl" style={{fontFamily: "medium"}}>Converse <span className='text-black bg-white p-2'>Conosco!</span></h1>
         </div>
 
         <div className="h-[400px] sm:h-[500px] md:h-[600px] relative my-8 sm:my-12 md:my-16">
