@@ -3,6 +3,7 @@ import NavBar from './components/Navbar';
 import ChromaGrid from './components/ChromaGrid';
 import ScrollStack, { ScrollStackItem } from './components/ScrollStack';
 import { GradientBackground } from "@/components/ui/noisy-gradient-backgrounds";
+import Footer from './Footer';
 
 const items = [
 
@@ -288,6 +289,7 @@ function AboutUs() {
         </div>
 
       </div>
+      <Footer />
     </div>
   );
 }

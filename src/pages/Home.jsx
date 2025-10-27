@@ -5,6 +5,7 @@ import { GradientBackground } from "@/components/ui/noisy-gradient-backgrounds";
 import { Link } from "react-router-dom";
 import ScrollVelocity from "../components/ui/ScrollVelocity";
 import About from "./About";
+import Footer from "./Footer";
 
 function Home(){
 
@@ -149,6 +150,7 @@ function Home(){
 </div>
         </div>
         <About />
+        <Footer />
         </>
     )
 }

@@ -32,6 +32,8 @@ function About() {
         }
     }, []);
 
+
+    // ALERTA AO PROFESSOR ESSA FUNÇÃO É PROPRIA DO REACT BITS E NÃO FUI EU QUEM FEZ
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -52,7 +54,6 @@ function About() {
                                 }
                             }, 50);
                         };
-
                         animateCounter(setVisitors, 8456);
                         animateCounter(setUsers, 2348);
                         animateCounter(setCompanies, 2340);
