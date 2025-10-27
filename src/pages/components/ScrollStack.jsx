@@ -193,46 +193,33 @@ const ScrollStack = ({
   ]);
 
   const handleScroll = useCallback(() => {
-    if (!animationFrameRef.current) {
-      animationFrameRef.current = requestAnimationFrame(() => {
-        updateCardTransforms();
-        animationFrameRef.current = null;
-      });
-    }
+    updateCardTransforms();
   }, [updateCardTransforms]);
 
   const setupLenis = useCallback(() => {
     if (useWindowScroll) {
-      // Adiciona listener de scroll nativo como fallback
-      window.addEventListener('scroll', handleScroll, { passive: true });
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+        touchMultiplier: 2,
+        infinite: false,
+        wheelMultiplier: 1,
+        lerp: 0.1,
+        syncTouch: true,
+        syncTouchLerp: 0.075
+      });
 
-      try {
-        const lenis = new Lenis({
-          duration: 1,
-          easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          smoothWheel: true,
-          touchMultiplier: 2,
-          infinite: false,
-          wheelMultiplier: 1,
-          lerp: 0.15,
-          syncTouch: true,
-          syncTouchLerp: 0.1
-        });
+      lenis.on('scroll', handleScroll);
 
-        lenis.on('scroll', handleScroll);
+      const raf = time => {
+        lenis.raf(time);
+        animationFrameRef.current = requestAnimationFrame(raf);
+      };
+      animationFrameRef.current = requestAnimationFrame(raf);
 
-        const raf = time => {
-          lenis.raf(time);
-          requestAnimationFrame(raf);
-        };
-        requestAnimationFrame(raf);
-
-        lenisRef.current = lenis;
-        return lenis;
-      } catch (error) {
-        console.error('Lenis initialization failed, using native scroll:', error);
-        return null;
-      }
+      lenisRef.current = lenis;
+      return lenis;
     } else {
       const scroller = scrollerRef.current;
       if (!scroller) return;
@@ -279,6 +266,10 @@ const ScrollStack = ({
 
     // Cachear posições originais dos cards ANTES de aplicar transforms
     cardOriginalPositionsRef.current.clear();
+
+    // Força um reflow para garantir que as posições estejam corretas
+    scroller.offsetHeight;
+
     cards.forEach((card, i) => {
       const originalTop = getElementOffset(card);
       cardOriginalPositionsRef.current.set(i, originalTop);
@@ -303,8 +294,8 @@ const ScrollStack = ({
     updateCardTransforms();
 
     return () => {
-      if (useWindowScroll) {
-        window.removeEventListener('scroll', handleScroll);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
       }
       if (lenisRef.current) {
         lenisRef.current.destroy();
@@ -314,7 +305,6 @@ const ScrollStack = ({
       cardOriginalPositionsRef.current.clear();
       transformsCache.clear();
       isUpdatingRef.current = false;
-      animationFrameRef.current = null;
     };
   }, [
     itemDistance,
@@ -357,10 +347,10 @@ const ScrollStack = ({
 
   return (
     <div className={containerClassName} ref={scrollerRef} style={containerStyles}>
-      <div className="scroll-stack-inner pt-[20vh] px-20 pb-[50rem] min-h-screen">
+      <div className="scroll-stack-inner pt-[20vh] px-20 pb-[100vh] min-h-screen">
         {children}
         {/* Spacer so the last pin can release cleanly */}
-        <div className="scroll-stack-end w-full h-px" />
+        <div className="scroll-stack-end w-full h-[200vh]" />
       </div>
     </div>
   );
