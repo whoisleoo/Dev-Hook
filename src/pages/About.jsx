@@ -139,7 +139,7 @@ function About() {
 
             </section>
 
-            {/* Versão Mobile - Imagens sobrepostas */}
+
             <section className="block md:hidden px-5 pb-0">
                 <div className="relative w-full max-w-md mx-auto h-[400px]">
                     <img src="./balcony.svg" className="absolute w-full h-full object-contain" style={{bottom: '0'}} alt="balcão"/>

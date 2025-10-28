@@ -144,7 +144,7 @@ function Home(){
                             <ScrollVelocity
   texts={['WHO WE ARE', 'About Us']}
   velocity={30}
-  className="custom-scroll-text"
+  className="custom-scroll-text text-white "
 
 />
 </div>

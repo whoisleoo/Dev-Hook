@@ -33,7 +33,7 @@ function Footer() {
 
     return (
        <>
-        <div className="w-full bg-black text-white overflow-hidden relative mb-0 pb-0">
+        <div className="w-full bg-black text-white overflow-hidden relative mb-0 pb-0 pt-120 md:pt-32">
 
             <section className="w-full relative mb-0 pb-0">
                 <div className='text-center text-3xl md:text-5xl lg:text-7xl pt-12 md:pt-20 px-4' style={{fontFamily: 'medium'}}>
@@ -44,7 +44,7 @@ function Footer() {
 
                 <div id="scene" ref={sceneRef} className="w-full relative overflow-hidden" style={{height: 'auto', paddingBottom: '50px'}}>
 
-
+                    
 
                     <div data-depth="0" className="w-full">
                         <img src="./shallow_wave_fotter.png" className="w-full block object-contain wave-animate-1" style={{position: 'relative', top: '30px', display: 'block', filter: 'drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4))'}} alt="shallow wave"/>
