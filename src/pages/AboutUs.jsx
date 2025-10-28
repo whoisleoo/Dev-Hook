@@ -267,7 +267,7 @@ function AboutUs() {
                           </div>
   </div>
   <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-3 md:mb-4" style={{fontFamily: 'medium'}}>Em resumo...</h2>
-  <p className="text-base sm:text-base md:text-2xl font-bold leading-relaxed">Ainda teremos muita história para contar, muito chão para andar, e muitas linhas de código para escrever, até agora, somos gratos pelo que já foi construido! esperamos um dia tornar esse website funcional com nossa própria API. <br/> Agradecimentos especiais: Moacir, Bernardo e Eduardo.</p>
+  <p className="text-base sm:text-base md:text-2xl font-bold leading-relaxed">Ainda teremos muita história para contar, muito chão para andar, e muitas linhas de código para escrever, até agora, somos gratos pelo que já foi construido! esperamos um dia tornar esse website funcional com nossa própria API. <br/> Agradecimentos especiais: Moacir, Bernardo, Eduardo e ao falecido Esdras.</p>
 </ScrollStackItem>
 
 </ScrollStack>
