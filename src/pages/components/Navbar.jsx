@@ -28,8 +28,8 @@ return(
 
     <div className="hidden lg:flex gap-12 text-md">
       <Link to="/#" className="hover:text-purple-400 transition-colors">Home</Link>
-      <a href="#" className="hover:text-purple-400 transition-colors">How it Works</a>
-      <a href="#" className="hover:text-purple-400 transition-colors">Support</a>
+      <Link to="/404" className="hover:text-purple-400 transition-colors">How it Works</Link>
+      <Link to="/404" className="hover:text-purple-400 transition-colors">Support</Link>
       <Link to="/AboutUs#" className="hover:text-purple-400 transition-colors">About us</Link>
     </div>
 
@@ -84,20 +84,20 @@ return(
       >
         Home
       </Link>
-      <a
-        href="#"
+      <Link 
+        to="/404"
         className="text-2xl hover:text-purple-400 transition-colors"
         onClick={toggleMenu}
       >
         How it Works
-      </a>
-      <a
-        href="#"
+      </Link>
+      <Link
+        to="/404"
         className="text-2xl hover:text-purple-400 transition-colors"
         onClick={toggleMenu}
       >
         Support
-      </a>
+      </Link>
       <Link
         to="/AboutUs#"
         className="text-2xl hover:text-purple-400 transition-colors"

@@ -90,7 +90,7 @@ function Footer() {
                             <div>
                                 <h3 className="text-white text-lg md:text-2xl font-bold mb-4 md:mb-6">Network</h3>
                                 <ul className="space-y-2 md:space-y-4">
-                                    <li><Link to="/aboutus" className="text-white text-sm md:text-lg hover:text-purple-300 transition">About</Link></li>
+                                    <li><Link to="/" className="text-white text-sm md:text-lg hover:text-purple-300 transition">About</Link></li>
                                     <li><Link to="/" className="text-white text-sm md:text-lg hover:text-purple-300 transition">Work with us</Link></li>
                                     <li><Link to="/" className="text-white text-sm md:text-lg hover:text-purple-300 transition">News</Link></li>
                                 </ul>

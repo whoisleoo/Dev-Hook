@@ -118,7 +118,7 @@ function AboutUs() {
     Verão de 2025
   </h2>
   <p className="text-base sm:text-base md:text-2xl font-bold leading-relaxed">
-    O DevHook surgiu como uma ideia de protótipo a um trabalho de faculdade, que deveria ser realizado no figma
+    O DevHook surgiu como uma ideia de protótipo a um trabalho de faculdade, que deveria ser realizado no figma com o objetivo de criação para apresentação de um pitch de um site ficticio.
   </p>
 </ScrollStackItem>
 
@@ -193,7 +193,7 @@ function AboutUs() {
                           </div>
   </div>
   <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-3 md:mb-4" style={{fontFamily: 'medium'}}>Setembro de 2025</h2>
-  <p className="text-base sm:text-base md:text-2xl font-bold leading-relaxed">A prototipagem ressurgiu, então o antigo projeto do DevHook foi modificado e melhorado.</p>
+  <p className="text-base sm:text-base md:text-2xl font-bold leading-relaxed">A prototipagem ressurgiu, então o antigo projeto do DevHook teve seu design melhorado, com o objetivo de colocar em prática o novo conhecimento dos desenvolvedores.</p>
 </ScrollStackItem>
 
 <ScrollStackItem
@@ -230,7 +230,7 @@ function AboutUs() {
                           </div>
   </div>
   <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-3 md:mb-4" style={{fontFamily: 'medium'}}>Outubro de 2025</h2>
-  <p className="text-sm sm:text-base md:text-2xl font-bold ">Em outro projeto de faculdade, o mesmo protótipo foi usado como base para a criação de um site simples para uma aula HTML e CSS, que foi o primeiro passo real para a existência contreta do site.</p>
+  <p className="text-sm sm:text-base md:text-2xl font-bold ">Finalmente chegamos ao mês atual, onde tivemos a ilustre oportunidade de transformar esse projeto que até então era apenas visto como uma prototipagem pelo figma em um website real! </p>
 </ScrollStackItem>
 
 <ScrollStackItem
@@ -267,7 +267,7 @@ function AboutUs() {
                           </div>
   </div>
   <h2 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-7xl mb-3 md:mb-4" style={{fontFamily: 'medium'}}>Em resumo...</h2>
-  <p className="text-base sm:text-base md:text-2xl font-bold leading-relaxed">Ainda teremos muita história para contar, muito chão para andar, e muitas linhas de código para escrever, até agora, somos gratos pelo que já foi construido!</p>
+  <p className="text-base sm:text-base md:text-2xl font-bold leading-relaxed">Ainda teremos muita história para contar, muito chão para andar, e muitas linhas de código para escrever, até agora, somos gratos pelo que já foi construido! esperamos um dia tornar esse website funcional com nossa própria API. <br/> Agradecimentos especiais: Moacir, Bernardo e Eduardo.</p>
 </ScrollStackItem>
 
 </ScrollStack>

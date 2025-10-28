@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GradientBackground } from "@/components/ui/noisy-gradient-backgrounds";
 import Parallax from 'parallax-js'
 import { useEffect, useRef } from "react";
@@ -6,6 +6,7 @@ import { useEffect, useRef } from "react";
 function Login() {
 
       const sceneRef = useRef(null);
+      const navigate = useNavigate();
     
         
         useEffect(() => {
@@ -43,12 +44,12 @@ function Login() {
                         Welcome back
                     </h1>
                     <div className="mb-20 flex gap-3">
-                        <button className="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 flex items-center justify-center gap-3 hover:bg-gray-50 transition">
+                        <button onClick={() => navigate('/404')} className="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 flex items-center justify-center gap-3 hover:bg-gray-50 transition">
                                 <img src='./google.svg' className='w-5 h-5'></img>
                             <span className="text-gray-700 font-medium text-sm">Log in with Google</span>
                         </button>
 
-                        <button className="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 flex items-center justify-center gap-3 hover:bg-gray-50 transition">
+                        <button onClick={() => navigate('/404')} className="w-full bg-white border border-gray-300 rounded-lg py-3 px-4 flex items-center justify-center gap-3 hover:bg-gray-50 transition">
                                  <img src='./github.svg' className='w-5 h-5'></img>
                             <span className="text-gray-700 font-medium text-sm">Log in with GitHub</span>
                         </button>
@@ -75,26 +76,26 @@ function Login() {
                         </div>
                     </div>
 
-                                   <button className="group w-full mt-20 py-4 rounded-2xl text-white font-bold text-lg transition-allduration-300 relative overflow-hidden hover:scale-105" >
+                                   <button onClick={() => navigate('/404')} className="group w-full mt-20 py-4 rounded-2xl text-white font-bold text-lg transition-allduration-300 relative overflow-hidden hover:scale-105" >
                        <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-90">
                            <GradientBackground
                                gradientType="linear-gradient"
                                gradientOrigin="left-middle"
                                colors={[
-                                  { color: 'rgba(138, 43, 226, 1)', stop: '0%' }, 
-                                                       { color: 'rgba(218, 62, 200, 1)', stop: '30%' },  
-                                                       { color: 'rgba(255, 20, 147, 1)', stop: '50%' },  
-                                                       { color: 'rgba(255, 95, 31, 1)', stop: '70%' }, 
-                                                       { color: 'rgba(255, 140, 0, 1)', stop: '100%' } 
+                                  { color: 'rgba(138, 43, 226, 1)', stop: '0%' },
+                                                       { color: 'rgba(218, 62, 200, 1)', stop: '30%' },
+                                                       { color: 'rgba(255, 20, 147, 1)', stop: '50%' },
+                                                       { color: 'rgba(255, 95, 31, 1)', stop: '70%' },
+                                                       { color: 'rgba(255, 140, 0, 1)', stop: '100%' }
                                ]}
                                noiseIntensity={0.5}
                                noisePatternSize={130}
                                noisePatternRefreshInterval={2}
                            />
                        </div>
-                   
+
                        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700">
-                   
+
                        </div>
                        <span className="relative z-10">Log In</span>
                    </button>
