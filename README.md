@@ -1,7 +1,7 @@
 
 
 <div align="center">
- <img src="https://img.shields.io/badge/status-Em Processo-blue" alt="Status">
+ <img src="https://img.shields.io/badge/status-FINALIZADO-blue" alt="Status">
 </div>
 
 <div align="center">
@@ -35,7 +35,8 @@ Você pode acessar uma demonstração do site **NÃO FUNCIONAL** <a href="https:
 ![ParallaxJS](https://img.shields.io/badge/Parallax_JS-a1163e?style=for-the-badge&logo=julia&logoColor=white)
 
 
-Além das ferramentas, foi utilizado designs do <a href="https://www.discord.com">Discord</a>.
+Além das ferramentas, foi utilizado designs do <a href="https://www.discord.com">Discord</a>. <br/>
+e alguns componentes do website <a href="https://reactbits.dev">ReactBits</a>.
 </div>
 
 ---
