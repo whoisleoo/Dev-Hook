@@ -35,31 +35,31 @@ function Home(){
     return(
         <>
         <NavBar/>
-        <div className="min-h-screen text-white px-7 py-20 relative">
+        <div className="min-h-screen text-white px-5 md:px-7 py-16 md:py-20 pb-16 md:pb-30 relative">
             <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center relative z-10">
                 <section className="space-y-6">
-                    <h1 className="text-5xl md:text-6xl font-bold leading-tight" style={{fontFamily: 'black'}}>
+                    <h1 className="text-[2.5rem] leading-tight md:text-6xl font-bold md:leading-tight" style={{fontFamily: 'black'}}>
                         Find the <span className="shimmer-text" style={{
                         }} >perfect</span><br/>
                         companies for <br/>
                         you.
                     </h1>
 
-                    <p className="text-gray-400 text-lg max-w-md mb-25">
+                    <p className="text-gray-400 text-base md:text-lg max-w-md mb-25 leading-relaxed">
                         // Level up your career by connecting with top tech companies looking for your skills.
                     </p>
                         <Link to={'/signup'}>
-                    <button className="group px-20 py-4 rounded-2xl text-white font-bold text-lg transition-allduration-300 mt-8 relative overflow-hidden hover:scale-105" >
+                    <button className="group w-full md:w-auto px-20 py-4 rounded-2xl text-white font-bold text-base md:text-lg transition-allduration-300 mt-10 md:mt-8 relative overflow-hidden hover:scale-105" >
     <div className="absolute inset-0 transition-opacity duration-300 group-hover:opacity-90">
         <GradientBackground
             gradientType="linear-gradient"
             gradientOrigin="left-middle"
             colors={[
-               { color: 'rgba(138, 43, 226, 1)', stop: '0%' }, 
-                                    { color: 'rgba(218, 62, 200, 1)', stop: '30%' },  
-                                    { color: 'rgba(255, 20, 147, 1)', stop: '50%' },  
-                                    { color: 'rgba(255, 95, 31, 1)', stop: '70%' }, 
-                                    { color: 'rgba(255, 140, 0, 1)', stop: '100%' } 
+               { color: 'rgba(138, 43, 226, 1)', stop: '0%' },
+                                    { color: 'rgba(218, 62, 200, 1)', stop: '30%' },
+                                    { color: 'rgba(255, 20, 147, 1)', stop: '50%' },
+                                    { color: 'rgba(255, 95, 31, 1)', stop: '70%' },
+                                    { color: 'rgba(255, 140, 0, 1)', stop: '100%' }
             ]}
             noiseIntensity={0.5}
             noisePatternSize={130}
@@ -75,7 +75,7 @@ function Home(){
 </Link>
                 </section>
 
-                <section className="relative">
+                <section className="relative hidden md:block">
                     <div className="w-full h-[500px] relative">
                         <div style={{
                             position: 'absolute',
@@ -140,7 +140,7 @@ function Home(){
                 </section>
 
             </div>
-            <div className="w-full pt-100 pb-50"   style={{fontFamily: 'medium'}}>
+            <div className="w-full pt-50 md:pt-100 pb-12 md:pb-50"   style={{fontFamily: 'medium'}}>
                             <ScrollVelocity
   texts={['WHO WE ARE', 'About Us']}
   velocity={30}
